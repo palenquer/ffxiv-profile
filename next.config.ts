@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'xivapi.com' },
     ],
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
