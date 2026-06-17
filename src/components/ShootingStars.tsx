@@ -12,6 +12,7 @@ export default function ShootingStars() {
     if (!ctx) return
 
     const cvs = canvas
+    const context = ctx
     const resize = () => {
       cvs.width = cvs.offsetWidth
       cvs.height = cvs.offsetHeight
@@ -54,7 +55,7 @@ export default function ShootingStars() {
     let animId: number
 
     function frame(ts: number) {
-      ctx.clearRect(0, 0, cvs.width, cvs.height)
+      context.clearRect(0, 0, cvs.width, cvs.height)
 
       if (ts - lastSpawn > 700 + Math.random() * 800) {
         spawn()
@@ -77,21 +78,21 @@ export default function ShootingStars() {
         const tx = s.x - (s.vx / mag) * s.len * s.opacity
         const ty = s.y - (s.vy / mag) * s.len * s.opacity
 
-        const grad = ctx.createLinearGradient(tx, ty, s.x, s.y)
+        const grad = context.createLinearGradient(tx, ty, s.x, s.y)
         grad.addColorStop(0, `rgba(${rgb},0)`)
         grad.addColorStop(1, `rgba(${rgb},${s.opacity * 0.85})`)
 
-        ctx.beginPath()
-        ctx.moveTo(tx, ty)
-        ctx.lineTo(s.x, s.y)
-        ctx.strokeStyle = grad
-        ctx.lineWidth = 1.5
-        ctx.stroke()
+        context.beginPath()
+        context.moveTo(tx, ty)
+        context.lineTo(s.x, s.y)
+        context.strokeStyle = grad
+        context.lineWidth = 1.5
+        context.stroke()
 
-        ctx.beginPath()
-        ctx.arc(s.x, s.y, 1.5, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${rgb},${s.opacity})`
-        ctx.fill()
+        context.beginPath()
+        context.arc(s.x, s.y, 1.5, 0, Math.PI * 2)
+        context.fillStyle = `rgba(${rgb},${s.opacity})`
+        context.fill()
       }
 
       animId = requestAnimationFrame(frame)
