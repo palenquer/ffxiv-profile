@@ -2,12 +2,13 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'lds-img.finalfantasyxiv.com' },
+      { protocol: 'https', hostname: 'img2.finalfantasyxiv.com' },
+      { protocol: 'https', hostname: 'xivapi.com' },
+    ],
     formats: ['image/avif', 'image/webp'],
-    unoptimized: true,
   },
-  output: 'export',
-  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
