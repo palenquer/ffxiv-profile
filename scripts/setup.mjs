@@ -308,12 +308,19 @@ async function main() {
   let existing = {}
   try { existing = JSON.parse(await readFile(CHARACTER_JSON, 'utf-8')) } catch {}
 
-  // Detect ID change → reset character data for the new character
+  // Detect ID change → reset character-specific data, but keep config fields
   const previousId = existing._lodestoneId
-  const idChanged = previousId && previousId !== id
+  const prevIsReal = /^\d+$/.test(previousId || '')  // ignore placeholder like "YOUR_LODESTONE_ID"
+  const idChanged = prevIsReal && previousId !== id
   if (idChanged) {
-    console.log(`  ⚡ New character (was ${previousId}) — resetting data\n`)
-    existing = {} // wipe old character, start fresh
+    console.log(`  ⚡ New character (was ${previousId}) — resetting character data\n`)
+    // Preserve user config and customizations across character switches
+    const keep = {}
+    for (const f of ['pronouns','sections','navLabels','rp','theme','gallery','socialLinks','footer',
+                     '_animationOptions','_socialPlatforms','_jobIconCodes']) {
+      if (existing[f] !== undefined) keep[f] = existing[f]
+    }
+    existing = keep
   }
 
   const filled = []
@@ -488,6 +495,19 @@ async function main() {
   }
 
   // ── Preserve manual fields ─────────────────────────────────────────────────
+
+  // Config fields that are never auto-filled — keep whatever the user set
+  if (!out.sections)   out.sections   = { about: true, rp: false, jobs: true, fc: true, gallery: true, social: true }
+  if (!out.navLabels)  out.navLabels  = { about: 'About', rp: 'Character', jobs: 'Jobs', fc: 'Free Company', gallery: 'Gallery', social: 'Social' }
+  if (!out._animationOptions) out._animationOptions = ['shooting-stars','fireflies','sakura','glitter','snow','aurora','bubbles']
+  if (!out._socialPlatforms)  out._socialPlatforms  = ['discord','carrd','twitter','twitch','bluesky','instagram']
+  if (!out._jobIconCodes)     out._jobIconCodes      = 'NIN BRD DNC DRG MCH MNK RPR SAM VPR BLM BLU PCT RDM SMN WHM AST SCH SGE DRK GNB PLD WAR'
+  // pronouns: keep existing value, add placeholder only on first run
+  if (out.pronouns === undefined) {
+    out.pronouns = ''
+    manual.push('pronouns  (optional — e.g. "She/Her", leave empty to hide)')
+  }
+
   out.heroImage    = '/images/hero.jpg'
   out.heroImageAlt = `${out.name} character portrait`
   if (!out.heroBgImage) out.heroBgImage = '/images/hero-bg.jpg'
