@@ -92,6 +92,7 @@ export interface CharacterData {
   theme?: {
     mode?: 'dark' | 'light'
     accentColor: string
+    animation?: 'shooting-stars' | 'fireflies' | 'sakura' | 'glitter' | 'snow' | 'aurora' | 'bubbles'
     background?: {
       baseColor?: string
       lightBaseColor?: string

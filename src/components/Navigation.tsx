@@ -84,7 +84,7 @@ export default function Navigation({ characterName, navItems }: NavigationProps)
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a
           href="#hero"
-          onClick={(e) => handleNavClick(e, '#hero')}
+          onClick={(e) => handleNavClick(e, '#hero', 'hero')}
           className="text-sm tracking-widest uppercase hover:opacity-80 transition-opacity"
           style={{ fontFamily: 'var(--font-cinzel, serif)', color: 'var(--color-ffxiv-gold)' }}
         >

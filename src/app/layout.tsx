@@ -56,6 +56,7 @@ export const metadata: Metadata = {
   title: `${name} — FFXIV Character Profile`,
   description: `${mainJob} on ${server} (${datacenter}). Character profile for ${name} in Final Fantasy XIV.`,
   keywords: ['FFXIV', 'Final Fantasy XIV', 'character profile', mainJob, name],
+  icons: { icon: '/favicon.ico' },
   openGraph: {
     title: `${name} — FFXIV Character Profile`,
     description: `${mainJob} on ${server} (${datacenter}).`,

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 import type { CharacterData } from '@/types'
-import ShootingStars from './ShootingStars'
+import HeroAnimation from './HeroAnimation'
 
 interface HeroSectionProps {
   data: Pick<CharacterData, 'name' | 'title' | 'mainJob' | 'mainJobIcon' | 'server' | 'datacenter' | 'race' | 'clan' | 'heroImage' | 'heroImageAlt' | 'heroBgImage' | 'theme'> & { pronouns?: string }
@@ -59,8 +59,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
         />
       </div>
 
-      {/* Shooting stars canvas */}
-      <ShootingStars />
+      {/* Background animation */}
+      <HeroAnimation type={theme?.animation} />
 
       {/* Ambient glow */}
       <div

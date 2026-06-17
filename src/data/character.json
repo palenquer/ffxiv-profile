@@ -189,9 +189,11 @@
     "text": "Made with love and a worrying number of raid wipes.",
     "year": 2026
   },
+  "_animationOptions": ["shooting-stars", "fireflies", "sakura", "glitter", "snow", "aurora", "bubbles"],
   "theme": {
     "mode": "dark",
     "accentColor": "#877fae",
+    "animation": "shooting-stars",
     "background": {
       "baseColor": "#0d0a12",
       "lightBaseColor": "#f0eef5",
