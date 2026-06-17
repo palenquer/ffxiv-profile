@@ -64,6 +64,7 @@ export interface CharacterData {
   datacenter: string
   race: string
   clan: string
+  pronouns?: string
   heroImage: string
   heroImageAlt: string
   heroBgImage?: string

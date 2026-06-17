@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
   show('social',  data.socialLinks.length > 0) && { id: 'social', label: labels.social },
 ].filter(Boolean) as NavItem[]
 
-const pronouns = data.rp?.tags?.find(
+const pronouns = data.pronouns ?? data.rp?.tags?.find(
   (t) => t.label.toLowerCase() === 'pronouns'
 )?.value
 

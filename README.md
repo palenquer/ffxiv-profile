@@ -31,6 +31,7 @@ All customization happens in **`src/data/character.json`**.
   "title": "Warrior of Light",
   "race": "Hyur",
   "clan": "Midlander",
+  "pronouns": "She/Her",
   "server": "Gilgamesh",
   "datacenter": "Aether",
   "mainJob": "Paladin",
