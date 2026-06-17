@@ -40,7 +40,7 @@ export default function ShootingStars() {
       const speed = Math.random() * 2.5 + 2
       streaks.push({
         x: -20,
-        y: Math.random() * canvas.height * 0.85,
+        y: Math.random() * cvs.height * 0.85,
         vx: Math.cos(rad) * speed,
         vy: Math.sin(rad) * speed,
         len: Math.random() * 100 + 60,
