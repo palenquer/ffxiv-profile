@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ffxiv-gold: #c8a84b;
+  --color-ffxiv-gold-light: #e8c878;
+  --color-ffxiv-gold-dark: #8a6f2e;
+  --color-ffxiv-dark: #0a0a0f;
+  --color-ffxiv-darker: #050508;
+  --color-ffxiv-surface: #111118;
+  --color-ffxiv-surface-2: #1a1a24;
+  --color-ffxiv-border: #2a2a3a;
+  --color-ffxiv-text: #d4cfc8;
+  --color-ffxiv-muted: #7a7580;
+  --color-role-tank: #5b8dd9;
+  --color-role-healer: #6dbf8a;
+  --color-role-dps: #d95b5b;
+  --color-role-crafter: #c87c3e;
+  --color-role-gatherer: #5bb5a0;
+
+  --font-family-display: 'Cinzel', 'Georgia', serif;
+  --font-family-body: 'Inter', 'system-ui', sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ffxiv-darker);
+    color: var(--color-ffxiv-text);
+  }
+
+  body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-ffxiv-darker);
+    color: var(--color-ffxiv-text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-ffxiv-gold);
+    color: #18150f;
+  }
+
+  /* Adaptive shadows — adapts per theme */
+  :root {
+    --ffxiv-title-shadow:
+      0 0 25px var(--color-ffxiv-gold-dark),
+      0 0 60px var(--color-ffxiv-gold-dark);
+    --ffxiv-nav-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --ffxiv-card-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+    --ffxiv-lightbox-bg: rgba(5, 5, 8, 0.96);
+  }
+  :root[data-theme="light"] {
+    --ffxiv-title-shadow:
+      0 0 12px color-mix(in srgb, var(--color-ffxiv-gold) 45%, transparent),
+      0 0 35px color-mix(in srgb, var(--color-ffxiv-gold) 20%, transparent);
+    --ffxiv-nav-shadow: 0 4px 20px color-mix(in srgb, var(--color-ffxiv-gold-dark) 20%, transparent);
+    --ffxiv-card-shadow: 0 0 30px color-mix(in srgb, var(--color-ffxiv-gold-dark) 20%, transparent);
+    --ffxiv-lightbox-bg: rgba(18, 12, 38, 0.88);
+  }
+
+  /* Light mode — override html/body to use the light palette variables */
+  :root[data-theme="light"],
+  :root[data-theme="light"] body {
+    background-color: var(--color-ffxiv-darker);
+    color: var(--color-ffxiv-text);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-ffxiv-darker);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ffxiv-gold-dark);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ffxiv-gold);
+  }
+
+  /* Hide scrollbar on carousel tracks */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-family-display);
+  }
+
+  .text-gold {
+    color: var(--color-ffxiv-gold);
+  }
+
+  .text-gold-light {
+    color: var(--color-ffxiv-gold-light);
+  }
+
+  .text-muted {
+    color: var(--color-ffxiv-muted);
+  }
+
+  .bg-surface {
+    background-color: var(--color-ffxiv-surface);
+  }
+
+  .bg-surface-2 {
+    background-color: var(--color-ffxiv-surface-2);
+  }
+
+  .border-ffxiv {
+    border-color: var(--color-ffxiv-border);
+  }
+
+  .border-gold {
+    border-color: var(--color-ffxiv-gold);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, var(--color-ffxiv-gold-dark), var(--color-ffxiv-gold), var(--color-ffxiv-gold-dark));
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-ffxiv-gold-dark) 0%,
+      var(--color-ffxiv-gold-light) 50%,
+      var(--color-ffxiv-gold-dark) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ornament-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ornament-line::before,
+  .ornament-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-ffxiv-gold-dark), var(--color-ffxiv-gold), var(--color-ffxiv-gold-dark), transparent);
+  }
+
+  .card-ffxiv {
+    background-color: var(--color-ffxiv-surface);
+    border: 1px solid var(--color-ffxiv-border);
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-ffxiv:hover {
+    border-color: var(--color-ffxiv-gold-dark);
+    transform: translateY(-2px);
+  }
+
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 7rem 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-padding {
+      padding: 8rem 2rem;
+    }
+  }
+}
