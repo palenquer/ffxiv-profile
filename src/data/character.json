@@ -1,7 +1,7 @@
 {
   "_lodestoneId": "YOUR_LODESTONE_ID",
 
-  "name": "Your Character Name",
+  "name": "Character Name",
   "title": "Your Title",
   "race": "Race",
   "clan": "Clan",
@@ -22,7 +22,7 @@
     "story": [
       "First paragraph of your character's story.",
       "Second paragraph — add as many as you like.",
-      "Each string in this array becomes its own paragraph."
+      "Each string in this becomes its own paragraph."
     ]
   },
 
@@ -95,7 +95,7 @@
     "rank": "10",
     "server": "Server",
     "datacenter": "Datacenter",
-    "description": "Optional FC description. Leave empty or remove this field to hide it.",
+    "description": "Optional FC description.",
     "_crestHelp": "Get crest image URLs from your FC's Lodestone page (right-click the crest → copy image address). Stack up to 3 layers.",
     "crestImages": [
       "https://lds-img.finalfantasyxiv.com/YOUR_BACKGROUND_LAYER.png",

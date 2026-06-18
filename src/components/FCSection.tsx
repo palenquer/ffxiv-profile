@@ -1,11 +1,13 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import FadeIn from './FadeIn'
 import type { CharacterData } from '@/types'
 
 export default function FCSection({ data, label = 'Free Company' }: { data: Pick<CharacterData, 'freeCompany'>; label?: string }) {
   const { freeCompany: fc } = data
+  const [crestFailed, setCrestFailed] = useState(false)
   if (!fc) return null
 
   const meta = [
@@ -60,20 +62,20 @@ export default function FCSection({ data, label = 'Free Company' }: { data: Pick
             />
 
             <div
-              className="flex gap-0"
+              className="flex flex-col sm:flex-row gap-0"
               style={{ backgroundColor: 'var(--color-ffxiv-surface-2)' }}
             >
-              {/* Left: crest column */}
-              {fc.crestImages && fc.crestImages.length > 0 && (
-                <div
-                  className="flex items-center justify-center shrink-0 px-8 py-8"
-                  style={{
-                    borderRight: '1px solid var(--color-ffxiv-border)',
-                    background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-ffxiv-gold) 6%, var(--color-ffxiv-surface-2)) 0%, var(--color-ffxiv-surface-2) 100%)',
-                  }}
-                >
-                  <div className="relative w-20 h-20 drop-shadow-lg">
-                    {fc.crestImages.map((src, i) => (
+              {/* Top/Left: crest column */}
+              <div
+                className="flex items-center justify-center shrink-0 px-8 py-6 sm:py-8 border-b sm:border-b-0 sm:border-r"
+                style={{
+                  borderColor: 'var(--color-ffxiv-border)',
+                  background: 'linear-gradient(135deg, color-mix(in srgb, var(--color-ffxiv-gold) 6%, var(--color-ffxiv-surface-2)) 0%, var(--color-ffxiv-surface-2) 100%)',
+                }}
+              >
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 drop-shadow-lg">
+                  {fc.crestImages && fc.crestImages.length > 0 && !crestFailed ? (
+                    fc.crestImages.map((src, i) => (
                       <Image
                         key={i}
                         src={src}
@@ -81,14 +83,25 @@ export default function FCSection({ data, label = 'Free Company' }: { data: Pick
                         fill
                         className="object-contain"
                         style={{ zIndex: i }}
+                        onError={() => setCrestFailed(true)}
                       />
-                    ))}
-                  </div>
+                    ))
+                  ) : (
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-35">
+                      <path d="M40 8 L68 20 L68 44 C68 58 40 72 40 72 C40 72 12 58 12 44 L12 20 Z"
+                            stroke="var(--color-ffxiv-gold)" strokeWidth="1.5" fill="none"/>
+                      <path d="M40 16 L60 26 L60 44 C60 54 40 64 40 64 C40 64 20 54 20 44 L20 26 Z"
+                            stroke="var(--color-ffxiv-gold)" strokeWidth="0.8" fill="none"/>
+                      <line x1="40" y1="24" x2="40" y2="56" stroke="var(--color-ffxiv-gold)" strokeWidth="1"/>
+                      <line x1="26" y1="38" x2="54" y2="38" stroke="var(--color-ffxiv-gold)" strokeWidth="1"/>
+                      <circle cx="40" cy="38" r="3" stroke="var(--color-ffxiv-gold)" strokeWidth="1" fill="none"/>
+                    </svg>
+                  )}
                 </div>
-              )}
+              </div>
 
-              {/* Right: info column */}
-              <div className="flex flex-col justify-center gap-3 px-8 py-7 min-w-0 flex-1">
+              {/* Bottom/Right: info column */}
+              <div className="flex flex-col justify-center gap-3 px-6 py-6 sm:px-8 sm:py-7 min-w-0 flex-1">
                 {/* Tag + Name */}
                 <div className="flex flex-col gap-1">
                   {fc.tag && (
@@ -115,12 +128,9 @@ export default function FCSection({ data, label = 'Free Company' }: { data: Pick
 
                 {/* Meta inline */}
                 {meta.length > 0 && (
-                  <div className="flex flex-wrap items-center" style={{ lineHeight: 1, gap: '0.25rem 0' }}>
-                    {meta.map((item, i) => (
-                      <span key={item.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                        {i > 0 && (
-                          <span style={{ color: 'var(--color-ffxiv-muted)', opacity: 0.4, fontSize: '0.85rem', margin: '0 0.5rem', lineHeight: 1 }}>·</span>
-                        )}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2" style={{ lineHeight: 1 }}>
+                    {meta.map((item) => (
+                      <span key={item.label} className="inline-flex items-center gap-1.5 whitespace-nowrap" style={{ lineHeight: 1 }}>
                         <span style={{ color: 'var(--color-ffxiv-muted)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.2em', lineHeight: 1 }}>
                           {item.label}
                         </span>

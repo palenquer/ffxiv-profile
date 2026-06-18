@@ -179,17 +179,14 @@ export default function HeroSection({ data }: HeroSectionProps) {
           </div>
 
           {/* Meta tags */}
-          <div className="flex flex-wrap justify-center" style={{ ...appear(550), alignItems: 'center', lineHeight: 1 }}>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2" style={{ ...appear(550), alignItems: 'center' }}>
             {[
               { label: 'Job', value: mainJob },
               { label: 'Server', value: server },
               { label: 'DC', value: datacenter },
               ...(pronouns ? [{ label: 'Pronouns', value: pronouns }] : []),
-            ].map((item, i) => (
-              <span key={item.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.375rem' }}>
-                {i > 0 && (
-                  <span style={{ color: 'var(--color-ffxiv-muted)', opacity: 0.4, fontSize: '0.85rem', margin: '0 0.625rem', lineHeight: 1 }}>·</span>
-                )}
+            ].map((item) => (
+              <span key={item.label} className="inline-flex items-center gap-1.5 whitespace-nowrap" style={{ lineHeight: 1 }}>
                 <span style={{ color: 'var(--color-ffxiv-muted)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.2em', lineHeight: 1 }}>
                   {item.label}
                 </span>
