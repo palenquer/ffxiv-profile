@@ -508,7 +508,7 @@ async function main() {
     manual.push('pronouns  (optional — e.g. "She/Her", leave empty to hide)')
   }
 
-  out.heroImage    = '/images/hero.jpg'
+  if (!out.heroImage) out.heroImage = '/images/hero.jpg'
   out.heroImageAlt = `${out.name} character portrait`
   if (!out.heroBgImage) out.heroBgImage = '/images/hero-bg.jpg'
 
