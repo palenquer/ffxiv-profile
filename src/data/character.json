@@ -1,22 +1,17 @@
 {
-  "_lodestoneId": "YOUR_LODESTONE_ID",
-
-  "name": "Character Name",
+  "_lodestoneId": "48463380",
+  "name": "Orbie Gloom",
   "title": "Your Title",
-  "race": "Race",
-  "clan": "Clan",
-  "server": "Server",
-  "datacenter": "Datacenter",
-
+  "race": "Lalafell",
+  "clan": "Dunesfolk",
+  "server": "Behemoth",
+  "datacenter": "Primal",
   "pronouns": "They/Them",
-
   "mainJob": "Ninja",
   "mainJobIcon": "NIN",
-
   "heroImage": "/images/hero.png",
-  "heroImageAlt": "Your character portrait",
+  "heroImageAlt": "Orbie Gloom character portrait",
   "heroBgImage": "/images/hero.png",
-
   "about": {
     "tagline": "Your tagline here.",
     "story": [
@@ -25,26 +20,107 @@
       "Each string in this becomes its own paragraph."
     ]
   },
-
   "jobs": [
-    { "name": "Ninja",      "icon": "NIN", "level": 100, "role": "dps"    },
-    { "name": "Warrior",    "icon": "WAR", "level": 90,  "role": "tank"   },
-    { "name": "White Mage", "icon": "WHM", "level": 85,  "role": "healer" },
-    { "name": "Bard",       "icon": "BRD", "level": 72,  "role": "dps"    },
-    { "name": "Dragoon",    "icon": "DRG", "level": 60,  "role": "dps"    }
+    {
+      "name": "Ninja",
+      "icon": "NIN",
+      "level": 100,
+      "role": "dps"
+    },
+    {
+      "name": "Pictomancer",
+      "icon": "PCT",
+      "level": 80,
+      "role": "dps"
+    },
+    {
+      "name": "Scholar",
+      "icon": "SCH",
+      "level": 71,
+      "role": "healer"
+    },
+    {
+      "name": "Sage",
+      "icon": "SGE",
+      "level": 70,
+      "role": "healer"
+    },
+    {
+      "name": "Reaper",
+      "icon": "RPR",
+      "level": 70,
+      "role": "dps"
+    },
+    {
+      "name": "Warrior",
+      "icon": "WAR",
+      "level": 54,
+      "role": "tank"
+    },
+    {
+      "name": "Red Mage",
+      "icon": "RDM",
+      "level": 53,
+      "role": "dps"
+    },
+    {
+      "name": "Samurai",
+      "icon": "SAM",
+      "level": 52,
+      "role": "dps"
+    },
+    {
+      "name": "Dark Knight",
+      "icon": "DRK",
+      "level": 51,
+      "role": "tank"
+    },
+    {
+      "name": "Dragoon",
+      "icon": "DRG",
+      "level": 51,
+      "role": "dps"
+    }
   ],
-
   "_jobIconCodes": "NIN BRD DNC DRG MCH MNK RPR SAM VPR BLM BLU PCT RDM SMN WHM AST SCH SGE DRK GNB PLD WAR",
-
   "gallery": [
-    { "id": "g1", "src": "/images/gallery/image-01.png", "alt": "Gallery image 1", "caption": "" },
-    { "id": "g2", "src": "/images/gallery/image-02.png", "alt": "Gallery image 2", "caption": "" },
-    { "id": "g3", "src": "/images/gallery/image-03.png", "alt": "Gallery image 3", "caption": "" },
-    { "id": "g4", "src": "/images/gallery/image-04.png", "alt": "Gallery image 4", "caption": "" },
-    { "id": "g5", "src": "/images/gallery/image-05.png", "alt": "Gallery image 5", "caption": "" },
-    { "id": "g6", "src": "/images/gallery/image-06.png", "alt": "Gallery image 6", "caption": "" }
+    {
+      "id": "g1",
+      "src": "/images/gallery/image-01.png",
+      "alt": "Gallery image 1",
+      "caption": ""
+    },
+    {
+      "id": "g2",
+      "src": "/images/gallery/image-02.png",
+      "alt": "Gallery image 2",
+      "caption": ""
+    },
+    {
+      "id": "g3",
+      "src": "/images/gallery/image-03.png",
+      "alt": "Gallery image 3",
+      "caption": ""
+    },
+    {
+      "id": "g4",
+      "src": "/images/gallery/image-04.png",
+      "alt": "Gallery image 4",
+      "caption": ""
+    },
+    {
+      "id": "g5",
+      "src": "/images/gallery/image-05.png",
+      "alt": "Gallery image 5",
+      "caption": ""
+    },
+    {
+      "id": "g6",
+      "src": "/images/gallery/image-06.png",
+      "alt": "Gallery image 6",
+      "caption": ""
+    }
   ],
-
   "socialLinks": [
     {
       "platform": "discord",
@@ -71,15 +147,32 @@
       "username": "yourhandle"
     }
   ],
-
-  "_socialPlatforms": ["discord", "carrd", "twitter", "twitch", "bluesky", "instagram"],
-
+  "_socialPlatforms": [
+    "discord",
+    "carrd",
+    "twitter",
+    "twitch",
+    "bluesky",
+    "instagram"
+  ],
   "rp": {
     "tags": [
-      { "label": "Status",   "value": "Open for RP"      },
-      { "label": "Pronouns", "value": "They/Them"        },
-      { "label": "Timezone", "value": "UTC"              },
-      { "label": "Style",    "value": "Para / Semi-Para" }
+      {
+        "label": "Status",
+        "value": "Open for RP"
+      },
+      {
+        "label": "Pronouns",
+        "value": "They/Them"
+      },
+      {
+        "label": "Timezone",
+        "value": "UTC"
+      },
+      {
+        "label": "Style",
+        "value": "Para / Semi-Para"
+      }
     ],
     "hooks": [
       "Hook one",
@@ -88,47 +181,47 @@
     ],
     "oocNote": "Player note here. Timezone info, plot preferences, or anything OOC you want to share."
   },
-
   "freeCompany": {
-    "name": "Your FC Name",
-    "tag": "TAG",
-    "rank": "10",
-    "server": "Server",
-    "datacenter": "Datacenter",
-    "description": "Optional FC description.",
-    "_crestHelp": "Get crest image URLs from your FC's Lodestone page (right-click the crest → copy image address). Stack up to 3 layers.",
+    "name": "Tutubarao",
+    "tag": "shork",
+    "rank": "15",
+    "server": "Behemoth",
+    "datacenter": "Primal",
     "crestImages": [
-      "https://lds-img.finalfantasyxiv.com/YOUR_BACKGROUND_LAYER.png",
-      "https://img2.finalfantasyxiv.com/c/YOUR_MIDDLE_LAYER.png",
-      "https://img2.finalfantasyxiv.com/c/YOUR_TOP_LAYER.png"
+      "https://lds-img.finalfantasyxiv.com/h/V/strFm2JQDmMpQN9NHfCA2X3vGI.png",
+      "https://img2.finalfantasyxiv.com/c/F00_f4d64b4d75ce7d3be3ba37e24ccc7830_00_64x64.png",
+      "https://img2.finalfantasyxiv.com/c/S00_9a8096c55d9b806ba05b5626ccfa14e8_00_64x64.png"
     ]
   },
-
   "sections": {
-    "about":   true,
-    "rp":      false,
-    "jobs":    true,
-    "fc":      true,
+    "about": true,
+    "rp": false,
+    "jobs": true,
+    "fc": true,
     "gallery": true,
-    "social":  true
+    "social": true
   },
-
   "navLabels": {
-    "about":   "About",
-    "rp":      "Character",
-    "jobs":    "Jobs",
-    "fc":      "Free Company",
+    "about": "About",
+    "rp": "Character",
+    "jobs": "Jobs",
+    "fc": "Free Company",
     "gallery": "Gallery",
-    "social":  "Social"
+    "social": "Social"
   },
-
   "footer": {
     "text": "Made with love and a worrying number of raid wipes.",
-    "year": 2025
+    "year": 2026
   },
-
-  "_animationOptions": ["shooting-stars", "fireflies", "sakura", "glitter", "snow", "aurora", "bubbles"],
-
+  "_animationOptions": [
+    "shooting-stars",
+    "fireflies",
+    "sakura",
+    "glitter",
+    "snow",
+    "aurora",
+    "bubbles"
+  ],
   "theme": {
     "mode": "dark",
     "accentColor": "#c8a84b",
