@@ -58,15 +58,15 @@
       "role": "tank"
     },
     {
-      "name": "Red Mage",
-      "icon": "RDM",
-      "level": 53,
+      "name": "Samurai",
+      "icon": "SAM",
+      "level": 54,
       "role": "dps"
     },
     {
-      "name": "Samurai",
-      "icon": "SAM",
-      "level": 52,
+      "name": "Red Mage",
+      "icon": "RDM",
+      "level": 53,
       "role": "dps"
     },
     {
