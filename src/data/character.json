@@ -182,15 +182,17 @@
     "oocNote": "Player note here. Timezone info, plot preferences, or anything OOC you want to share."
   },
   "freeCompany": {
-    "name": "Tutubarao",
-    "tag": "shork",
-    "rank": "20",
+    "name": "Astra Rhapsodia",
+    "tag": "ASTRA",
+    "rank": "30",
     "server": "Behemoth",
     "datacenter": "Primal",
+    "description": " Uma constelação de charme e camaradagem. Bemvindos novatos e veteranos! Todo dia uma bagunça diferente.",
     "crestImages": [
       "https://lds-img.finalfantasyxiv.com/h/V/strFm2JQDmMpQN9NHfCA2X3vGI.png",
-      "https://img2.finalfantasyxiv.com/c/F00_f4d64b4d75ce7d3be3ba37e24ccc7830_00_64x64.png",
-      "https://img2.finalfantasyxiv.com/c/S00_9a8096c55d9b806ba05b5626ccfa14e8_00_64x64.png"
+      "https://img2.finalfantasyxiv.com/c/B19_b5d1fcef1b8f894efd5f11cf2aa25121_b0_64x64.png",
+      "https://img2.finalfantasyxiv.com/c/F3d_1738e616948c5dd94ca251f51acf874d_00_64x64.png",
+      "https://img2.finalfantasyxiv.com/c/Sac_9d1e63f5e5ca2e745a6e919422ba2e4d_05_64x64.png"
     ]
   },
   "sections": {
